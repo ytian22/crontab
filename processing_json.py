@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 
 path='/srv/runme/'
 
@@ -18,5 +19,5 @@ def extracting(prefix):
             time_file.write('\n'.join(['name: %s  age: %s'%(i[0],i[1]) for i in extracted]))
             time_file.close()
 
-    
-extracting('prefix')
+prefix = sys.argv[1]
+extracting(prefix)
